@@ -22,7 +22,7 @@ export const routes = createBrowserRouter([
              element : <RightSideCourseNav></RightSideCourseNav>
             },
             {
-                path:'/Course/:id',
+                path:'/Course',
                 element: <Course></Course>
                 
             }

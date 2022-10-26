@@ -12,7 +12,6 @@ const RightSideCourseNav = () => {
     },[])
     return (
         <div>
-            <h1>this is course nav {courseCategories.length}</h1>
             <div>
                 {
                   courseCategories.map(category => <p key={category.nav_id}>
