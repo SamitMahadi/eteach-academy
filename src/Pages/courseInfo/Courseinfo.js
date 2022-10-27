@@ -7,7 +7,7 @@ import { Container } from 'react-bootstrap';
 
 const Courseinfo = () => {
     const course = useLoaderData()
-    const {name,img,id} = course
+    const {name,img} = course
     return (
         <div>
            <Container>

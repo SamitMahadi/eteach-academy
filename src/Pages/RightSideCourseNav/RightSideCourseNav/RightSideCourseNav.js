@@ -4,14 +4,14 @@ import { Container } from 'react-bootstrap';
 import Courseinfo from '../../courseInfo/Courseinfo';
 
 const RightSideCourseNav = () => {
-    const course =useLoaderData()
+    
     
     
 
     const[courseCategories,setCourseCategories]=useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/course-categories')
+        fetch('http://localhost:5000/course')
         .then(res=>res.json())
         .then(data=> setCourseCategories(data));
     },[])
@@ -22,7 +22,7 @@ const RightSideCourseNav = () => {
                   courseCategories.map(category => <p key={category.nav_id}>
                     <Container className='mb-5 '>
 
-                         <Link className='text-decoration-none'>{category.Nav_name}</Link>
+                         <Link className='text-decoration-none'to={`${category.id}`} >{category.Nav_name}</Link>
                          
                     </Container>
 

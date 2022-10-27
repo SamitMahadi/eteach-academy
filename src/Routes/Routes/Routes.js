@@ -18,14 +18,14 @@ export const routes = createBrowserRouter([
                 path:'/',
                 element: <Home></Home>
             },
-            {
-             path:'/courseNav/:id',
-             element : <RightSideCourseNav></RightSideCourseNav>,
-             loader:({params})=>(`http://localhost:5000/courseNav/${params.id}`)
+            // {
+            //  path:'/course/:id',
+            //  element : ,
+            //  loader:({params})=>(`http://localhost:5000/course/${params.id}`)
              
              
              
-            },
+            // },
             {
                 path:'/course',
                 element: <Course></Course>,
