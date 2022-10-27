@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+
 import { Link } from 'react-router-dom';
 import {FaUser} from 'react-icons/fa'
 import { Image } from 'react-bootstrap';
@@ -23,13 +24,33 @@ const Header = () => {
             
           </Nav>
           <Nav>
-            <Nav.Link ><Link to={'/signin'}>Sign in</Link></Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">{user?.displayName}</Nav.Link>
-            <Nav.Link eventKey={2} >{user.photoURL?
-              <Image style={{height:'30px'}} roundedCircle src={user.photoURL}>
-              </Image>:<FaUser></FaUser>}
+            
+             <Nav.Link  href="#memes">
+            {/* {
+                user.uid?
+                <>
+                <span>{user?.displayName}</span>
+                <button>logout</button>
+                </>
+                :
+                <>
+                <Link to={'/signin'}>Signin</Link>
+                <Link to={'/signup'}>Signup</Link>
+                </>
+              } */}
+             
+
+
+              
+              </Nav.Link>
+            
+            
+               <Nav.Link eventKey={2} >
+                {/* {user.photoURL?
+               <Image style={{height:'30px'}} roundedCircle src={user.photoURL}>
+              </Image>:<FaUser></FaUser>} */}
                   
-            </Nav.Link>
+              </Nav.Link> 
           </Nav>
         </Navbar.Collapse>
       </Container>
