@@ -1,18 +1,21 @@
 import React, { createContext } from 'react';
-
-
-
-
-
+import  {getAuth, signInWithPopup } from 'firebase/auth'
+import app from '../../Firebase/Firebase.config';
 
 export const AuthContext = createContext()
+const auth = getAuth(app);
+
 
 
 
 const AuthProvider = ({children}) => {
     const user  = {displayName:'samit'}
 
-const authInfo = {user}
+    const providerLogin = (provider)=>{
+        return signInWithPopup(auth,provider)
+    }
+
+const authInfo = {user,providerLogin}
 
 
     return (
@@ -25,3 +28,4 @@ const authInfo = {user}
         </AuthContext.Provider>
     );
 };
+export default AuthProvider
