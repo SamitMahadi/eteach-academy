@@ -15,9 +15,9 @@ const NewCard = ({course}) => {
 
 
 
-<Row  lg={2} xxl={2} className="g-4 m-0">
+    <Row className="g-4 m-0">
         
-        <Col className='col-2'>
+        <Col>
           <Card>
             <Card.Img variant="top" src={img} />
             <Card.Body>
@@ -27,12 +27,12 @@ const NewCard = ({course}) => {
                 lead-in to additional content. This content is a little bit
                 longer.
               </Card.Text>
-              <Button variant="primary">View Details</Button>
+              <Button variant="primary"><Link className='text-white text-decoration-none' to={`/course/${id}`}>View Details</Link></Button>
             </Card.Body>
           </Card>
           </Col>
       
-          </Row >
+    </Row >
 
 
 

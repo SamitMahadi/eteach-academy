@@ -12,19 +12,26 @@ const Course = () => {
         <div>
             <Container>
                 <Row>
-                     <Col lg='4'>
+                     <Col lg='4 ' className='pt-5 mt-4 sticky-lg-top bg-dark border rounded  h-25 d-inline-block'>
                        <RightSideCourseNav></RightSideCourseNav>
                      </Col>
                      
-                     <Col lg='8'>
+                     <Col lg='8 '>
                       
-                        {
+                      
+
+                       
+
+                       {
                             Allcourse.map(course=><NewCard
                             key={course.id}
                             course={course}
                            
                             ></NewCard>)
                         }
+                       
+
+                       
                        
                         
                       
