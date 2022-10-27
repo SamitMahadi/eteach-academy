@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
-  const {user} = useContext(AuthContext)
+  
     return (
         <Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -20,7 +20,7 @@ const Header = () => {
             
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
+            <Nav.Link href="#deets">gh</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
               Dank memes
             </Nav.Link>
