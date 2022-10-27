@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 const RightSideCourseNav = () => {
+    
 
     const[courseCategories,setCourseCategories]=useState([]);
 
@@ -15,9 +17,14 @@ const RightSideCourseNav = () => {
             <div>
                 {
                   courseCategories.map(category => <p key={category.nav_id}>
-                    <Link>{category.Nav_name}</Link>
+                    <Container>
 
-                  </p> )
+                         <Link to={`/courseNav/${category.nav_id}`}>{category.Nav_name}</Link>
+                         
+                    </Container>
+
+                  </p>
+                   )
 
 
                 }

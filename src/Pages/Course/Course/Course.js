@@ -1,25 +1,31 @@
-import React from 'react';
+import {React} from 'react';
 import { Container , Row,Col} from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import NewCard from '../../../Components/NewCard/NewCard';
 import RightSideCourseNav from '../../RightSideCourseNav/RightSideCourseNav/RightSideCourseNav'
 
 const Course = () => {
-    const Courses = useLoaderData()
+
+ const Allcourse =useLoaderData()
     
     return (
         <div>
             <Container>
                 <Row>
-                     <Col lg='3'>
+                     <Col lg='4'>
                        <RightSideCourseNav></RightSideCourseNav>
                      </Col>
                      
-                     <Col lg='9'>
-                        <h2> {Courses.length}</h2>
+                     <Col lg='8'>
+                      
                         {
-                            Courses.map(course => <NewCard></NewCard>)
+                            Allcourse.map(course=><NewCard
+                            key={course.id}
+                            course={course}
+                           
+                            ></NewCard>)
                         }
+                       
                         
                       
                      </Col>
