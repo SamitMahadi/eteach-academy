@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { Container } from 'react-bootstrap';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
@@ -17,6 +17,9 @@ const Signin = () => {
 
   const {logIn}=useContext(AuthContext)
   const navigate = useNavigate()
+  const location =useLocation();
+
+  const from = location.state?.from?.pathname || '/'
 
   const handleSubmit = event=>{
     event.preventDefault()
@@ -29,7 +32,7 @@ const Signin = () => {
       console.log(user);
       form.reset();
       setError('')
-      navigate('/');
+      navigate(from,{replace:true});
 
     })
     .catch(error=>{

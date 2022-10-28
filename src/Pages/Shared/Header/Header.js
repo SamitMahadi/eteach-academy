@@ -25,9 +25,9 @@ const handleLogOut =()=>{
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link ><Link to='/'>Home</Link></Nav.Link>
-            <Link to='/course'>Courses</Link>
-            <Nav.Link href="#pricing">Blog</Nav.Link>
+            <Nav.Link ><Link className='text-decoration-none text-white' to='/'>Home</Link></Nav.Link>
+            <Link className='text-decoration-none text-white' to='/course'>Courses</Link>
+            <Nav.Link className='text-decoration-none text-white' to='/blog'>Blog</Nav.Link>
             
           </Nav>
           <Nav>

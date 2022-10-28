@@ -5,7 +5,8 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 
-const Courseinfo = () => {
+const Courseinfo = (checkout) => {
+
     const course = useLoaderData()
     const {name,img} = course
     return (
@@ -21,7 +22,7 @@ const Courseinfo = () => {
         </Card.Text>
         <div className='d-flex justify-content-between'>
         <Button variant="primary" ><Link className='text-decoration-none text-white' to='/course'>Go Back</Link></Button>
-        <Button variant="primary" className=''><Link className='text-decoration-none text-white ' >Get our premium acess</Link></Button>
+        <Button variant="primary" className=''><Link className='text-decoration-none text-white'to={'/checkout'}>Get our premium acess</Link></Button>
         </div>
       </Card.Body>
     </Card>
