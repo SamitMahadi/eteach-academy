@@ -5,23 +5,24 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 
-const Courseinfo = (checkout) => {
+
+const Courseinfo = () => {
 
     const course = useLoaderData()
-    const {name,img} = course
+    const {name,img,details} = course
     return (
         <div>
            <Container>
            <Card>
       <Card.Img variant="top" src={img} />
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
+        <Card.Title>{name}  </Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {details}
         </Card.Text>
-        <div className='d-flex justify-content-between'>
+        <div className='d-flex justify-content-around'>
         <Button variant="primary" ><Link className='text-decoration-none text-white' to='/course'>Go Back</Link></Button>
+        <Button variant="primary" ><Link className='text-decoration-none text-white' >Dwonload file</Link></Button>
         <Button variant="primary" className=''><Link className='text-decoration-none text-white'to={'/checkout'}>Get our premium acess</Link></Button>
         </div>
       </Card.Body>
