@@ -4,9 +4,33 @@ import Form from 'react-bootstrap/Form';
 import { Container } from 'react-bootstrap';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 
 const Signin = () => {
+
+
+  const {logIn}=useContext(AuthContext)
+  const navigate = useNavigate()
+
+  const handleSubmit = event=>{
+    event.preventDefault()
+    const form = event.target;
+    const email = form.email.value
+    const password = form.password.value;
+    logIn(email,password)
+    .then(result=> {
+      const user = result.user;
+      console.log(user);
+      form.reset();
+      navigate('/');
+
+    })
+    .catch(error=>console.error(error))
+  }
 
 const {providerLogin}=useContext(AuthContext)
 
@@ -27,10 +51,10 @@ const handleGoogleSignIN=()=>{
 
     return (
       <Container className='pt-5 border-5'>
-        <Form className='width-50'>
+        <Form className='width-50' onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         
-        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Control type="email" name="email" placeholder="Enter email" required/>
         <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text>
@@ -38,7 +62,7 @@ const handleGoogleSignIN=()=>{
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Control name="password" type="password" placeholder="Password" required />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         
