@@ -21,13 +21,13 @@ const handleLogOut =()=>{
     return (
         <Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand ><Link to='/'>eTeach-Academy</Link></Navbar.Brand>
+        <Navbar.Brand ><Link className='text-decoration-none text-white ' to='/'>eTeach-Academy</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link ><Link className='text-decoration-none text-white' to='/'>Home</Link></Nav.Link>
-            <Link className='text-decoration-none text-white' to='/course'>Courses</Link>
-            <Nav.Link className='text-decoration-none text-white' to='/blog'>Blog</Nav.Link>
+            <Nav.Link><Link className='text-decoration-none text-white' to='/course'>Courses</Link></Nav.Link>
+            <Nav.Link ><Link className='text-decoration-none text-white' to='/blog'>Blog</Link></Nav.Link>
             
           </Nav>
           <Nav>
@@ -41,8 +41,8 @@ const handleLogOut =()=>{
                 </>
                 :
                 <>
-                <Link to={'/signin'}>Signin</Link>
-                <Link to={'/signup'}>Signup</Link>
+                <Link className='text-decoration-none text-white me-3' to={'/signin'}>Signin</Link>
+                <Link className='text-decoration-none text-white' to={'/signup'}>Signup</Link>
                 </>
              }
 

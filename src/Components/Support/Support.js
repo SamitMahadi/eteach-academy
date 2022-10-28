@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+
 import Card from 'react-bootstrap/Card';
 
 
@@ -14,10 +15,9 @@ const Support = () => {
          <Card className='mt-10 col'  border="dark" style={{ width: '18rem' }}>
         <Card.Body>
         
-          <Card.Title>Life time support</Card.Title>
+          <Card.Title> Life time support</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          Get FREE support for the life of your home. We will give you support through Facebook, Skype and over the call.
           </Card.Text>
         </Card.Body>
       </Card>
@@ -26,10 +26,9 @@ const Support = () => {
       <Card className='mt-10 col' border="dark" style={{ width: '18rem' }}>
         <Card.Body>
         
-          <Card.Title>Life time support</Card.Title>
+          <Card.Title>Qualified Teacher</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          A qualified teacher is commonly defined as a teacher who has at least the minimum academic qualifications required for...
           </Card.Text>
         </Card.Body>
       </Card>
@@ -40,10 +39,9 @@ const Support = () => {
       <Card className='mt-10 col' border="dark" style={{ width: '18rem' }}>
         <Card.Body>
         
-          <Card.Title>Life time support</Card.Title>
+          <Card.Title>Premium Quality</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          Whatever your company is in need of, rest assured that The Top Quality Services will do it perfectly!, we are ready for work..
           </Card.Text>
         </Card.Body>
       </Card>

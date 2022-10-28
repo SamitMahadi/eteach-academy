@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { FaGoogle } from 'react-icons/fa';
 
 
 
@@ -83,8 +84,8 @@ const handleGoogleSignIN=()=>{
       <Form.Text className='text-danger'>
        {error}
       </Form.Text>
-      <Button variant="primary"  onClick={handleGoogleSignIN}>
-        
+      <Button variant="primary"className='p-2'  onClick={handleGoogleSignIN}>
+      <FaGoogle></FaGoogle>
          sign in with google
       </Button>
       </div>
