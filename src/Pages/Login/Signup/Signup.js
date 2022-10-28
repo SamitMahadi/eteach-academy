@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Container } from 'react-bootstrap';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const Signup = () => {
+
+    const[error,setError]=useState('')
     const{createUser}= useContext(AuthContext)
 
 const handleSubmit = event =>{
@@ -21,9 +23,18 @@ const handleSubmit = event =>{
     .then(result=>{
         const user =result.user
         console.log(user);
+        setError('')
         form.reset()
     })
-    .catch(error=>console.error(error));
+    .catch(error=>{
+        
+        
+                   console.error(error)
+                   setError(error.message);
+
+    
+    
+                });
  }
 
     return (
@@ -55,9 +66,15 @@ const handleSubmit = event =>{
         
       </Form.Group>
    
+      <div className='d-flex '>
       <Button variant="primary" type="submit">
         sign up
       </Button>
+      <Form.Text className='text-danger'>
+        {error}
+      </Form.Text>
+
+      </div>
       
     
     </Form>
